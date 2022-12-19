@@ -126,7 +126,7 @@
 <script src="https://code.jquery.com/jquery-3.6.2.js" integrity="sha256-pkn2CUZmheSeyssYw3vMp1+xyub4m+e+QK4sQskvuo4=" crossorigin="anonymous"></script>
 
 <script type="text/javascript">
-
+URL_PATH = `__URL_PATH__`
 $(document).ready(() => {
     var data = []
     id = 0
@@ -170,7 +170,7 @@ $(document).ready(() => {
     $('#generate-btn').click(() => {
         let prompt = $('#prompt').val()
         if (!prompt) return // todo
-        url = `http://127.0.0.1:5000/generate`
+        url = (URL_PATH == `__URL_PATH__`? `http://127.0.0.1:5000` : URL_PATH) + `/generate`
         $.ajax({
             url: url,
             type: 'POST',
