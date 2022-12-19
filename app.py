@@ -25,10 +25,11 @@ def generate():
 
         while(generated_count >= 1):
             # Todo processing
+            random_seed = random.randint(0, 99999999) if is_random else seed
             ret = {
                 'prompt': prompt,
-                'seed': random.randint(0, 99999999) if is_random else seed,
-                'image': generateImgFromText(prompt=prompt, seed=seed)
+                'seed': random_seed,
+                'image': generateImgFromText(prompt=prompt, seed=random_seed)
             }
             retVal.append(ret)
             generated_count -= 1
