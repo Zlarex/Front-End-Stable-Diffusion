@@ -170,7 +170,7 @@ $(document).ready(() => {
     $('#generate-btn').click(() => {
         let prompt = $('#prompt').val()
         if (!prompt) return // todo
-        url = (URL_PATH == `__URL_PATH__`? `http://127.0.0.1:5000` : URL_PATH) + `/generate`
+        url = (URL_PATH == `http://127.0.0.1:5000`? `http://127.0.0.1:5000` : URL_PATH) + `/generate`
         $.ajax({
             url: url,
             type: 'POST',
